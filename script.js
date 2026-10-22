@@ -1,15 +1,7 @@
-// Like functionality for AL NASAR App
-document.querySelectorAll('.like-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        btn.classList.toggle('fa-regular');
-        btn.classList.toggle('fa-solid');
-        btn.classList.toggle('liked');
-        if(btn.classList.contains('liked')) {
-            btn.style.color = 'red';
-        } else {
-            btn.style.color = 'black';
-        }
-    });
+ document.querySelectorAll('.like').forEach(icon=>{
+ icon.addEventListener('click',()=>{
+   icon.classList.toggle('fa-regular');
+   icon.classList.toggle('fa-solid');
+   icon.classList.toggle('liked');
+ });
 });
-
-console.log("AL NASAR Social Media App Loaded Successfully!");
