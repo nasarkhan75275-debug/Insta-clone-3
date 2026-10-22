@@ -17,7 +17,7 @@ body{background:#fff;color:#000}
 .auth-box button{width:100%;background:var(--green);color:#fff;border:none;padding:8px;border-radius:8px;font-weight:700;margin-top:10px;cursor:pointer}
 .auth-box button:hover{background:var(--green-dark)}
 .divider{margin:20px 0;border-top:1px solid #dbdbdb;position:relative}.divider span{position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#fff;padding:0 10px;font-size:11px;color:#737373}
-.switch{font-size:13px;margin-top:15px}.switch span{color:var(--green);font-weight:700;cursor:pointer}
+.switch{font-size:13px;margin-top:15px;padding:10px}.switch span{color:var(--green);font-weight:700;cursor:pointer;display:inline-block;padding:5px 10px;background:#f0fdf4;border-radius:20px}
 .error{color:red;font-size:11px;margin-top:5px;min-height:12px}
 #app{max-width:470px;margin:0 auto;border-left:1px solid #dbdbdb;border-right:1px solid #dbdbdb;min-height:100vh;padding-bottom:60px;background:#fff}
 header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #dbdbdb;position:sticky;top:0;background:#fff;z-index:10}
@@ -51,71 +51,4 @@ header i{font-size:22px;margin-left:14px;cursor:pointer}
 .setting-item{display:flex;justify-content:space-between;align-items:center;padding:15px 12px;border-bottom:1px solid #efefef;cursor:pointer;font-size:14px}
 .setting-item i{color:#737373}
 .setting-header{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid #dbdbdb;font-weight:700;position:sticky;top:0;background:#fff}
-.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:470px;background:#fff;border-top:1px solid #dbdbdb;display:flex;justify-content:space-around;padding:12px 0;font-size:22px;z-index:20}
-.bottom-nav i.active{color:var(--green)}
-.liked{color:var(--green) !important}
-.green-btn{background:var(--green);color:#fff;border:none;padding:6px 16px;border-radius:6px;font-weight:600;cursor:pointer}
-</style>
-</head>
-<body>
-
-<!-- LOGIN -->
-<div id="loginPage" class="auth-page">
-  <div class="auth-box">
-    <h1>AL NASAR</h1>
-    <input id="loginUser" type="text" placeholder="Username">
-    <input id="loginPass" type="password" placeholder="Password">
-    <button onclick="login()">Log in</button>
-    <p class="error" id="loginError"></p>
-    <div class="divider"><span>OR</span></div>
-    <p class="switch">Don't have account? <span onclick="showSignup()">Sign up</span></p>
-  </div>
-</div>
-
-<!-- SIGNUP -->
-<div id="signupPage" class="auth-page hidden">
-  <div class="auth-box">
-    <h1>AL NASAR</h1>
-    <p style="color:#737373;font-size:13px;margin-bottom:12px">Sign up to see photos from your friends.</p>
-    <input id="signUser" type="text" placeholder="Username">
-    <input id="signPass" type="password" placeholder="Password">
-    <button onclick="signup()">Sign up</button>
-    <p class="error" id="signError"></p>
-    <p class="switch">Have an account? <span onclick="showLogin()">Log in</span></p>
-  </div>
-</div>
-
-<!-- APP -->
-<div id="app" class="hidden">
-  <header>
-    <h1>AL NASAR</h1>
-    <div><i class="fa-regular fa-heart"></i><i class="fa-regular fa-paper-plane"></i><i class="fa-solid fa-bars" onclick="openTab('settings')"></i></div>
-  </header>
-
-  <div id="homeSection">
-    <div class="story-bar">
-      <div class="story"><img src="https://i.pravatar.cc/100?img=1"><span>Your story</span></div>
-      <div class="story"><img src="https://i.pravatar.cc/100?img=2"><span>ali_07</span></div>
-      <div class="story"><img src="https://i.pravatar.cc/100?img=3"><span>sara</span></div>
-      <div class="story"><img src="https://i.pravatar.cc/100?img=8"><span>nasar</span></div>
-      <div class="story"><img src="https://i.pravatar.cc/100?img=11"><span>zoya</span></div>
-    </div>
-    <div id="feed" class="feed"></div>
-  </div>
-
-  <div id="searchSection" class="page hidden"><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search"></div><p class="empty">Search users</p></div>
-  <div id="reelsSection" class="page hidden"><p class="empty"><i class="fa-solid fa-clapperboard"></i>Reels - Green Edition</p></div>
-
-  <div id="profileSection" class="page hidden">
-    <div class="profile-top">
-      <img src="https://i.pravatar.cc/100?img=12">
-      <div>
-        <h2 id="profileName">user</h2>
-        <div class="profile-stats"><div><b>0</b>posts</div><div><b>0</b>followers</div><div><b>0</b>following</div></div>
-        <button class="green-btn" style="margin-top:8px" onclick="openTab('settings')">Edit Profile</button>
-      </div>
-    </div>
-    <p class="empty"><i class="fa-solid fa-border-all"></i>No posts yet - Tap + to create</p>
-  </div>
-
-  <!-- SETTINGS PAGE - NEW
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:470px;background:#fff;border-top:1px solid #dbdbdb;display:flex;justify-content:space-around;padding:12px 0;font-size:22px;z-index
