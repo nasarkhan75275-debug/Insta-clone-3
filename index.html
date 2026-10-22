@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AL NASAR • Social</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="auth-page">
+  <div class="auth-box">
+    <h1>AL NASAR</h1>
+    <input id="loginUser" type="text" placeholder="Username">
+    <input id="loginPass" type="password" placeholder="Password">
+    <button onclick="login()">Log in</button>
+    <p class="error" id="loginError"></p>
+    <div class="divider"><span>OR</span></div>
+    <p class="switch">Don't have an account? <span onclick="showSignup()">Sign up</span></p>
+  </div>
+</div>
+
+<!-- SIGNUP PAGE -->
+<div id="signupPage" class="auth-page hidden">
+  <div class="auth-box">
+    <h1>AL NASAR</h1>
+    <p class="sub">Sign up to see photos from your friends.</p>
+    <input id="signUser" type="text" placeholder="Username">
+    <input id="signPass" type="password" placeholder="Password">
+    <button onclick="signup()">Sign up</button>
+    <p class="error" id="signError"></p>
+    <p class="switch">Have an account? <span onclick="showLogin()">Log in</span></p>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" class="hidden">
+  <header>
+    <h1>AL NASAR</h1>
+    <div><i class="fa-regular fa-heart"></i><i class="fa-regular fa-paper-plane"></i></div>
+  </header>
+
+  <div id="homeSection">
+    <div class="story-bar">
+      <div class="story"><img src="https://i.pravatar.cc/100?img=1"><span>Your story</span></div>
+      <div class="story"><img src="https://i.pravatar.cc/100?img=2"><span>ali_07</span></div>
+      <div class="story"><img src="https://i.pravatar.cc/100?img=3"><span>sara</span></div>
+      <div class="story"><img src="https://i.pravatar.cc/100?img=8"><span>nasar</span></div>
+    </div>
+    <div id="feed" class="feed">
+      <div class="empty"><i class="fa-regular fa-images"></i><p>Welcome to AL NASAR<br>No posts yet. Create first post with + button</p></div>
+    </div>
+  </div>
+
+  <div id="searchSection" class="page hidden">
+    <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search"></div>
+    <p class="empty">Search coming soon</p>
+  </div>
+
+  <div id="reelsSection" class="page hidden">
+    <p class="empty"><i class="fa-solid fa-clapperboard"></i><br>Reels<br>Videos will appear here</p>
+  </div>
+
+  <div id="profileSection" class="page hidden">
+    <div class="profile-top"><img src="https://i.pravatar.cc/100?img=12"><div><h2 id="profileName">user</h2><button onclick="logout()">Log out</button></div></div>
+    <p class="empty">No posts yet</p>
+  </div>
+
+  <nav class="bottom-nav">
+    <i id="nav-home" class="fa-solid fa-house active" onclick="openTab('home')"></i>
+    <i id="nav-search" class="fa-solid fa-magnifying-glass" onclick="openTab('search')"></i>
+    <i class="fa-regular fa-square-plus" onclick="createPost()"></i>
+    <i id="nav-reels" class="fa-solid fa-clapperboard" onclick="openTab('reels')"></i>
+    <i id="nav-profile" class="fa-regular fa-user" onclick="openTab('profile')"></i>
+  </nav>
+</div>
+
+<script src="script.js"></script>
+</body>
+  </html>
