@@ -1,15 +1,65 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AL NASAR • Social</title>
-<link rel="stylesheet" href="style.css">
+<title>AL NASAR • Green</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+:root{--green:#1DB954;--green-dark:#128c3e}
+body{background:#fff;color:#000}
+.hidden{display:none !important}
+.auth-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f6fef8;padding:20px}
+.auth-box{background:#fff;border:1px solid #dbdbdb;width:100%;max-width:350px;padding:35px 20px;text-align:center;border-radius:8px}
+.auth-box h1{font-size:34px;margin-bottom:12px;font-weight:900;letter-spacing:2px;color:var(--green)}
+.auth-box input{width:100%;padding:10px;background:#fafafa;border:1px solid #dbdbdb;border-radius:4px;margin-bottom:7px;font-size:13px;outline:none}
+.auth-box button{width:100%;background:var(--green);color:#fff;border:none;padding:8px;border-radius:8px;font-weight:700;margin-top:10px;cursor:pointer}
+.auth-box button:hover{background:var(--green-dark)}
+.divider{margin:20px 0;border-top:1px solid #dbdbdb;position:relative}.divider span{position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#fff;padding:0 10px;font-size:11px;color:#737373}
+.switch{font-size:13px;margin-top:15px}.switch span{color:var(--green);font-weight:700;cursor:pointer}
+.error{color:red;font-size:11px;margin-top:5px;min-height:12px}
+#app{max-width:470px;margin:0 auto;border-left:1px solid #dbdbdb;border-right:1px solid #dbdbdb;min-height:100vh;padding-bottom:60px;background:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #dbdbdb;position:sticky;top:0;background:#fff;z-index:10}
+header h1{font-size:24px;font-weight:900;color:var(--green)}
+header i{font-size:22px;margin-left:14px;cursor:pointer}
+.story-bar{display:flex;flex-direction:row;gap:14px;padding:12px 10px;overflow-x:auto;border-bottom:1px solid #dbdbdb}
+.story-bar::-webkit-scrollbar{display:none}
+.story{min-width:64px;text-align:center;flex-shrink:0}
+.story img{width:62px;height:62px;border-radius:50%;padding:3px;background:linear-gradient(45deg,var(--green),#a5f3b5);display:block;margin:0 auto}
+.story span{font-size:11px;margin-top:4px;display:block}
+.feed{width:100%}
+.empty{text-align:center;color:#737373;padding:60px 20px;font-size:14px;line-height:20px}
+.empty i{font-size:38px;margin-bottom:12px;display:block}
+.post{border-bottom:1px solid #efefef}
+.post-head{display:flex;align-items:center;gap:10px;padding:10px 12px}
+.post-head img{width:32px;height:32px;border-radius:50%}
+.post-head i{margin-left:auto}
+.post-img{width:100%;display:block}
+.icons{display:flex;gap:14px;padding:10px 12px;font-size:22px}
+.icons .save{margin-left:auto}
+.likes{font-weight:600;font-size:14px;padding:0 12px 4px}
+.caption{font-size:14px;padding:0 12px 12px}
+.page{padding:0}
+.search-box{margin:10px;background:#efefef;padding:10px 12px;border-radius:8px;display:flex;gap:10px;align-items:center}
+.search-box input{border:none;background:transparent;outline:none;width:100%}
+.profile-top{display:flex;gap:20px;padding:20px;align-items:center}
+.profile-top img{width:75px;height:75px;border-radius:50%;border:3px solid var(--green)}
+.profile-stats{display:flex;gap:20px;margin-top:8px;font-size:14px}
+.profile-stats b{display:block;text-align:center}
+.setting-list{padding:10px}
+.setting-item{display:flex;justify-content:space-between;align-items:center;padding:15px 12px;border-bottom:1px solid #efefef;cursor:pointer;font-size:14px}
+.setting-item i{color:#737373}
+.setting-header{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid #dbdbdb;font-weight:700;position:sticky;top:0;background:#fff}
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:470px;background:#fff;border-top:1px solid #dbdbdb;display:flex;justify-content:space-around;padding:12px 0;font-size:22px;z-index:20}
+.bottom-nav i.active{color:var(--green)}
+.liked{color:var(--green) !important}
+.green-btn{background:var(--green);color:#fff;border:none;padding:6px 16px;border-radius:6px;font-weight:600;cursor:pointer}
+</style>
 </head>
 <body>
 
-<!-- LOGIN PAGE -->
+<!-- LOGIN -->
 <div id="loginPage" class="auth-page">
   <div class="auth-box">
     <h1>AL NASAR</h1>
@@ -18,15 +68,15 @@
     <button onclick="login()">Log in</button>
     <p class="error" id="loginError"></p>
     <div class="divider"><span>OR</span></div>
-    <p class="switch">Don't have an account? <span onclick="showSignup()">Sign up</span></p>
+    <p class="switch">Don't have account? <span onclick="showSignup()">Sign up</span></p>
   </div>
 </div>
 
-<!-- SIGNUP PAGE -->
+<!-- SIGNUP -->
 <div id="signupPage" class="auth-page hidden">
   <div class="auth-box">
     <h1>AL NASAR</h1>
-    <p class="sub">Sign up to see photos from your friends.</p>
+    <p style="color:#737373;font-size:13px;margin-bottom:12px">Sign up to see photos from your friends.</p>
     <input id="signUser" type="text" placeholder="Username">
     <input id="signPass" type="password" placeholder="Password">
     <button onclick="signup()">Sign up</button>
@@ -35,11 +85,11 @@
   </div>
 </div>
 
-<!-- MAIN APP -->
+<!-- APP -->
 <div id="app" class="hidden">
   <header>
     <h1>AL NASAR</h1>
-    <div><i class="fa-regular fa-heart"></i><i class="fa-regular fa-paper-plane"></i></div>
+    <div><i class="fa-regular fa-heart"></i><i class="fa-regular fa-paper-plane"></i><i class="fa-solid fa-bars" onclick="openTab('settings')"></i></div>
   </header>
 
   <div id="homeSection">
@@ -48,35 +98,24 @@
       <div class="story"><img src="https://i.pravatar.cc/100?img=2"><span>ali_07</span></div>
       <div class="story"><img src="https://i.pravatar.cc/100?img=3"><span>sara</span></div>
       <div class="story"><img src="https://i.pravatar.cc/100?img=8"><span>nasar</span></div>
+      <div class="story"><img src="https://i.pravatar.cc/100?img=11"><span>zoya</span></div>
     </div>
-    <div id="feed" class="feed">
-      <div class="empty"><i class="fa-regular fa-images"></i><p>Welcome to AL NASAR<br>No posts yet. Create first post with + button</p></div>
-    </div>
+    <div id="feed" class="feed"></div>
   </div>
 
-  <div id="searchSection" class="page hidden">
-    <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search"></div>
-    <p class="empty">Search coming soon</p>
-  </div>
-
-  <div id="reelsSection" class="page hidden">
-    <p class="empty"><i class="fa-solid fa-clapperboard"></i><br>Reels<br>Videos will appear here</p>
-  </div>
+  <div id="searchSection" class="page hidden"><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search"></div><p class="empty">Search users</p></div>
+  <div id="reelsSection" class="page hidden"><p class="empty"><i class="fa-solid fa-clapperboard"></i>Reels - Green Edition</p></div>
 
   <div id="profileSection" class="page hidden">
-    <div class="profile-top"><img src="https://i.pravatar.cc/100?img=12"><div><h2 id="profileName">user</h2><button onclick="logout()">Log out</button></div></div>
-    <p class="empty">No posts yet</p>
+    <div class="profile-top">
+      <img src="https://i.pravatar.cc/100?img=12">
+      <div>
+        <h2 id="profileName">user</h2>
+        <div class="profile-stats"><div><b>0</b>posts</div><div><b>0</b>followers</div><div><b>0</b>following</div></div>
+        <button class="green-btn" style="margin-top:8px" onclick="openTab('settings')">Edit Profile</button>
+      </div>
+    </div>
+    <p class="empty"><i class="fa-solid fa-border-all"></i>No posts yet - Tap + to create</p>
   </div>
 
-  <nav class="bottom-nav">
-    <i id="nav-home" class="fa-solid fa-house active" onclick="openTab('home')"></i>
-    <i id="nav-search" class="fa-solid fa-magnifying-glass" onclick="openTab('search')"></i>
-    <i class="fa-regular fa-square-plus" onclick="createPost()"></i>
-    <i id="nav-reels" class="fa-solid fa-clapperboard" onclick="openTab('reels')"></i>
-    <i id="nav-profile" class="fa-regular fa-user" onclick="openTab('profile')"></i>
-  </nav>
-</div>
-
-<script src="script.js"></script>
-</body>
-  </html>
+  <!-- SETTINGS PAGE - NEW
