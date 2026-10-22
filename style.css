@@ -1,20 +1,21 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-body { background: #fafafa; padding-bottom: 60px; }
-.navbar { background: #fff; border-bottom: 1px solid #dbdbdb; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
-.logo { font-family: 'Segoe UI', sans-serif; font-weight: 800; letter-spacing: 2px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.nav-icons i { margin-left: 15px; font-size: 20px; }
-.container { max-width: 500px; margin: auto; }
-.stories { background: #fff; border: 1px solid #dbdbdb; display: flex; gap: 15px; padding: 15px; overflow-x: auto; margin-bottom: 10px; }
-.story { text-align: center; font-size: 12px; }
-.story-img { width: 60px; height: 60px; border-radius: 50%; padding: 2px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #bc1888); }
-.story-img img { width: 100%; height: 100%; border-radius: 50%; border: 2px solid #fff; }
-.post { background: #fff; border: 1px solid #dbdbdb; margin-bottom: 10px; }
-.post-header { display: flex; align-items: center; padding: 10px; gap: 10px; }
-.post-header img { width: 32px; height: 32px; border-radius: 50%; }
-.post-header i { margin-left: auto; }
-.post-img { width: 100%; height: auto; }
-.post-actions { padding: 10px; display: flex; gap: 15px; font-size: 22px; }
-.bookmark { margin-left: auto; }
-.caption { padding: 0 10px 15px; font-size: 14px; }
-.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #dbdbdb; display: flex; justify-content: space-around; padding: 12px 0; font-size: 22px; }
-.liked { color: red; font-weight: 900; }
+ *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body{background:#fff;color:#000;max-width:470px;margin:auto;border-left:1px solid #dbdbdb;border-right:1px solid #dbdbdb;min-height:100vh;padding-bottom:60px}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid #dbdbdb;position:sticky;top:0;background:#fff;z-index:100}
+header h1{font-family:'Brush Script MT',cursive;font-weight:600;font-size:28px;letter-spacing:.5px;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+header i{font-size:23px;margin-left:16px}
+.story-bar{display:flex;gap:14px;padding:12px 10px;overflow-x:auto;border-bottom:1px solid #dbdbdb}
+.story-bar::-webkit-scrollbar{display:none}
+.story{text-align:center;min-width:65px}
+.story img{width:62px;height:62px;border-radius:50%;padding:2.5px;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf);border:2px solid #fff}
+.story span{font-size:11px;display:block;margin-top:3px}
+.post-head{display:flex;align-items:center;gap:10px;padding:10px 12px}
+.post-head img{width:32px;height:32px;border-radius:50%}
+.post-head span{color:#737373;font-size:14px}
+.post-head i{margin-left:auto}
+.post-img{width:100%;display:block}
+.icons{display:flex;gap:16px;padding:10px 12px;font-size:23px}
+.icons .save{margin-left:auto}
+.likes{font-weight:600;font-size:14px;padding:0 12px 6px}
+.caption{font-size:14px;padding:0 12px 14px;line-height:18px}
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:470px;background:#fff;border-top:1px solid #dbdbdb;display:flex;justify-content:space-around;padding:12px 0;font-size:23px;z-index:100}
+.liked{color:#ed4956 !important}
