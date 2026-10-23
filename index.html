@@ -7,48 +7,135 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-:root{--green:#1DB954;--green-dark:#128c3e}
-body{background:#fff;color:#000}
+:root{--green:#1DB954}
+body{background:#fff}
 .hidden{display:none !important}
-.auth-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f6fef8;padding:20px}
-.auth-box{background:#fff;border:1px solid #dbdbdb;width:100%;max-width:350px;padding:35px 20px;text-align:center;border-radius:8px}
-.auth-box h1{font-size:34px;margin-bottom:12px;font-weight:900;letter-spacing:2px;color:var(--green)}
-.auth-box input{width:100%;padding:10px;background:#fafafa;border:1px solid #dbdbdb;border-radius:4px;margin-bottom:7px;font-size:13px;outline:none}
-.auth-box button{width:100%;background:var(--green);color:#fff;border:none;padding:8px;border-radius:8px;font-weight:700;margin-top:10px;cursor:pointer}
-.auth-box button:hover{background:var(--green-dark)}
-.divider{margin:20px 0;border-top:1px solid #dbdbdb;position:relative}.divider span{position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#fff;padding:0 10px;font-size:11px;color:#737373}
-.switch{font-size:13px;margin-top:15px;padding:10px}.switch span{color:var(--green);font-weight:700;cursor:pointer;display:inline-block;padding:5px 10px;background:#f0fdf4;border-radius:20px}
-.error{color:red;font-size:11px;margin-top:5px;min-height:12px}
-#app{max-width:470px;margin:0 auto;border-left:1px solid #dbdbdb;border-right:1px solid #dbdbdb;min-height:100vh;padding-bottom:60px;background:#fff}
-header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #dbdbdb;position:sticky;top:0;background:#fff;z-index:10}
+#app{max-width:470px;margin:0 auto;border:1px solid #dbdbdb;min-height:100vh;padding-bottom:65px;background:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid #dbdbdb;position:sticky;top:0;background:#fff;z-index:10}
 header h1{font-size:24px;font-weight:900;color:var(--green)}
-header i{font-size:22px;margin-left:14px;cursor:pointer}
-.story-bar{display:flex;flex-direction:row;gap:14px;padding:12px 10px;overflow-x:auto;border-bottom:1px solid #dbdbdb}
+.story-bar{display:flex;gap:14px;padding:12px 10px;overflow-x:auto;border-bottom:1px solid #dbdbdb}
 .story-bar::-webkit-scrollbar{display:none}
-.story{min-width:64px;text-align:center;flex-shrink:0}
-.story img{width:62px;height:62px;border-radius:50%;padding:3px;background:linear-gradient(45deg,var(--green),#a5f3b5);display:block;margin:0 auto}
+.story{min-width:64px;text-align:center}
+.story img{width:62px;height:62px;border-radius:50%;padding:3px;background:linear-gradient(45deg,var(--green),#a5f3b5)}
 .story span{font-size:11px;margin-top:4px;display:block}
-.feed{width:100%}
-.empty{text-align:center;color:#737373;padding:60px 20px;font-size:14px;line-height:20px}
-.empty i{font-size:38px;margin-bottom:12px;display:block}
 .post{border-bottom:1px solid #efefef}
 .post-head{display:flex;align-items:center;gap:10px;padding:10px 12px}
 .post-head img{width:32px;height:32px;border-radius:50%}
 .post-head i{margin-left:auto}
 .post-img{width:100%;display:block}
-.icons{display:flex;gap:14px;padding:10px 12px;font-size:22px}
+.icons{display:flex;gap:14px;padding:10px 12px;font-size:22px;align-items:center}
 .icons .save{margin-left:auto}
+.icons i{cursor:pointer}
 .likes{font-weight:600;font-size:14px;padding:0 12px 4px}
 .caption{font-size:14px;padding:0 12px 12px}
-.page{padding:0}
-.search-box{margin:10px;background:#efefef;padding:10px 12px;border-radius:8px;display:flex;gap:10px;align-items:center}
-.search-box input{border:none;background:transparent;outline:none;width:100%}
-.profile-top{display:flex;gap:20px;padding:20px;align-items:center}
-.profile-top img{width:75px;height:75px;border-radius:50%;border:3px solid var(--green)}
-.profile-stats{display:flex;gap:20px;margin-top:8px;font-size:14px}
-.profile-stats b{display:block;text-align:center}
-.setting-list{padding:10px}
-.setting-item{display:flex;justify-content:space-between;align-items:center;padding:15px 12px;border-bottom:1px solid #efefef;cursor:pointer;font-size:14px}
-.setting-item i{color:#737373}
-.setting-header{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid #dbdbdb;font-weight:700;position:sticky;top:0;background:#fff}
-.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:470px;background:#fff;border-top:1px solid #dbdbdb;display:flex;justify-content:space-around;padding:12px 0;font-size:22px;z-index
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:470px;background:#fff;border-top:1px solid #dbdbdb;display:flex;justify-content:space-around;padding:12px 0;font-size:22px;z-index:20}
+.setting-header{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid #dbdbdb;font-weight:700;background:#fff}
+.auth-card{margin:15px;padding:15px;border:1px solid #dbdbdb;border-radius:10px}
+.auth-card input{width:100%;padding:10px;background:#fafafa;border:1px solid #dbdbdb;border-radius:6px;margin-bottom:8px}
+.auth-card button{width:100%;background:var(--green);color:#fff;border:none;padding:10px;border-radius:8px;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="app">
+<header>
+<h1>AL NASAR</h1>
+<div><i class="fa-solid fa-gear" onclick="openSettings()"></i></div>
+</header>
+
+<div id="feedPage">
+<div class="story-bar">
+<div class="story"><img src="https://i.pravatar.cc/100?img=1"><span>You</span></div>
+<div class="story"><img src="https://i.pravatar.cc/100?img=2"><span>aman</span></div>
+<div class="story"><img src="https://i.pravatar.cc/100?img=3"><span>zoya</span></div>
+</div>
+
+<!-- POST 1 -->
+<div class="post">
+<div class="post-head"><img src="https://i.pravatar.cc/100?img=5"><b>al_nasar_official</b></div>
+<img class="post-img" src="https://picsum.photos/500/500?random=1">
+<div class="icons">
+<i class="fa-regular fa-heart like-btn" onclick="likePost(this)"></i>
+<i class="fa-regular fa-comment" onclick="commentPost(this)"></i>
+<i class="fa-regular fa-paper-plane" onclick="sharePost()"></i>
+<i class="fa-regular fa-bookmark save" onclick="this.classList.toggle('fa-solid')"></i>
+</div>
+<div class="likes"><span class="like-count">128</span> likes</div>
+<div class="caption"><b>al_nasar_official</b> Ab Like aur Share dono working hai 💚</div>
+</div>
+
+<!-- POST 2 -->
+<div class="post">
+<div class="post-head"><img src="https://i.pravatar.cc/100?img=6"><b>green_vibes</b></div>
+<img class="post-img" src="https://picsum.photos/500/500?random=2">
+<div class="icons">
+<i class="fa-regular fa-heart like-btn" onclick="likePost(this)"></i>
+<i class="fa-regular fa-comment" onclick="commentPost(this)"></i>
+<i class="fa-regular fa-paper-plane" onclick="sharePost()"></i>
+<i class="fa-regular fa-bookmark save" onclick="this.classList.toggle('fa-solid')"></i>
+</div>
+<div class="likes"><span class="like-count">89</span> likes</div>
+<div class="caption"><b>green_vibes</b> Nature is the filter 🌿</div>
+</div>
+</div>
+
+<div id="settingsPage" class="hidden">
+<div class="setting-header"><i class="fa-solid fa-arrow-left" onclick="closeSettings()"></i> Settings (Login yahan hai)</div>
+<div class="auth-card">
+<p id="authStatus" style="font-size:12px;color:gray;margin-bottom:8px;">Current: Guest</p>
+<input id="setUser" placeholder="Username">
+<input id="setPass" type="password" placeholder="Password">
+<button onclick="doLogin()">Login / Save</button>
+</div>
+</div>
+
+<div class="bottom-nav">
+<i class="fa-solid fa-house" onclick="closeSettings()"></i>
+<i class="fa-solid fa-magnifying-glass"></i>
+<i class="fa-regular fa-square-plus"></i>
+<i class="fa-solid fa-clapperboard"></i>
+<i class="fa-solid fa-user" onclick="openSettings()"></i>
+</div>
+</div>
+
+<script>
+// Settings
+function openSettings(){document.getElementById('feedPage').classList.add('hidden');document.getElementById('settingsPage').classList.remove('hidden');}
+function closeSettings(){document.getElementById('settingsPage').classList.add('hidden');document.getElementById('feedPage').classList.remove('hidden');}
+function doLogin(){
+ let u=document.getElementById('setUser').value.trim();
+ if(!u){alert('Username likho');return;}
+ localStorage.setItem('alnasar_user',u);
+ document.getElementById('authStatus').innerText='Current: '+u;
+ alert('Login: '+u); closeSettings();
+}
+let cu=localStorage.getItem('alnasar_user'); if(cu){document.getElementById('authStatus').innerText='Current: '+cu;}
+
+// LIKE SYSTEM - FIXED
+function likePost(el){
+ let countEl = el.closest('.post').querySelector('.like-count');
+ let count = parseInt(countEl.innerText);
+ if(el.classList.contains('fa-regular')){
+   el.classList.remove('fa-regular'); el.classList.add('fa-solid'); el.style.color='red';
+   countEl.innerText = count + 1;
+ } else {
+   el.classList.remove('fa-solid'); el.classList.add('fa-regular'); el.style.color='';
+   countEl.innerText = count - 1;
+ }
+}
+// SHARE SYSTEM - FIXED
+function sharePost(){
+ let url = window.location.href;
+ if(navigator.share){
+   navigator.share({title:'AL NASAR', text:'Check my Green Insta Clone 💚', url:url});
+ } else {
+   navigator.clipboard.writeText(url);
+   alert('Link copy ho gaya! 📋\n'+url);
+ }
+}
+function commentPost(el){
+ let c = prompt('Comment likho:');
+ if(c){ alert('Comment added: '+c+' (demo)'); }
+}
+</script>
+</body>
+</html>
